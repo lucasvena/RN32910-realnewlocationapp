@@ -6,15 +6,15 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  content: {
+  content:{
     flex: 1,
     margin: 20,
   },
-  title: {
+  title:{
     fontSize: 18,
     marginBottom: 20,
   },
-  input: {
+  input:{
     borderBottomColor: colors.primary,
     borderBottomWidth: 1,
     marginBottom: 20,

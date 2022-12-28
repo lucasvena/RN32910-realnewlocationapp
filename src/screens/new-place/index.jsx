@@ -1,12 +1,37 @@
-import { View, Text } from "react-native";
-
+import { useState } from "react";
+import { View, Text, ScrollView, TextInput, Button } from "react-native";
+import { useDispatch } from "react-redux";
+import { ImageSelector } from "../../components";
+import { savePlace } from "../../store/place.slice";
+import colors from "../../utils/colors";
 import { styles } from "./styles";
 
 const NewPlace = ({ navigation }) => {
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState(null);
+  const dispatch = useDispatch(); 
+
+  const onHandleSubmit = () => {
+    dispatch(savePlace({ title, image }));
+    navigation.navigate("Places");
+  }
+
+  const onHandleChange = (text) => {
+    setTitle(text);
+  }
+
+  const onImagePicker = (uri) => {
+    setImage(uri); 
+  };
   return (
-    <View style={styles.container}>
-      <Text>New Place</Text>
-    </View>
+    <ScrollView style={styles.container}>
+      <View style={styles.content}>
+        <Text style={styles.title}>Título</Text>
+        <TextInput onChangeText={onHandleChange} style={styles.input} placeholder='Escribe el lugar' />
+        <ImageSelector onImagePicker={onImagePicker}/>
+        <Button color={colors.primary} title='Guardar dirección' onPress={onHandleSubmit} />
+      </View>
+    </ScrollView>
   );
 };
 
