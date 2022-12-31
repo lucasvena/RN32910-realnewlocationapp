@@ -32,6 +32,4 @@ export const styles = StyleSheet.create({
     color: colors.primary,
     textAlign: "center",
   },
-  map:{
-  },
 });
