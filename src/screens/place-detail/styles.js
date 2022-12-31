@@ -6,31 +6,32 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  image: {
-    height: "40%",
-    minHeight: 300,
+  image:{
+    minHeight: 250,
     width: "100%",
-  },
-  location: {
+    minWidth: 250,
+    },
+  location:{
     margin: 20,
-    width: "90%",
-    maxWidth: 350,
+    width: "100%",
+    maxWidth: 370,
+    height: "100%",
+    maxHeight: 250,
     backgroundColor: colors.white,
     shadowColor: colors.black,
     shadowOpacity: 0.26,
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 0, height: 0 },
     shadowRadius: 8,
     elevation: 5,
-    borderRadius: 10,
+    bborderRadious: 10,
   },
-  addressContainer: {
+  addressContainer:{
     padding: 20,
   },
-  address: {
+  address:{
     color: colors.primary,
     textAlign: "center",
   },
-  map: {
-    height: 300,
+  map:{
   },
 });
